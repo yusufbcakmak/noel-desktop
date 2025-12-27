@@ -9,9 +9,9 @@ let tray;
 let settings = {
     density: 'Med',
     speed: 'Slow',
-    musicPlaying: true,
+    musicPlaying: false,
     volume: 0.2,
-    treeAlwaysOnTop: false
+    treeAlwaysOnTop: true
 };
 
 function createTreeWindow() {
