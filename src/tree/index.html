@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Christmas Tree</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="tree-container">
+        <img src="../../assets/tree.png" alt="Festive Christmas Tree">
+    </div>
+    <!-- Hidden audio element using the mp4 file -->
+    <video id="bgMusic" loop hidden>
+        <source src="../../assets/song.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        const audio = document.getElementById('bgMusic');
+        audio.volume = 0.5; // Default Medium
+
+        window.electronAPI.onMusicControl((command, value) => {
+            if (command === 'play') {
+                audio.play().catch(() => { });
+            } else if (command === 'pause') {
+                audio.pause();
+            } else if (command === 'volume') {
+                audio.volume = value;
+            }
+        });
+    </script>
+</body>
+
+</html>

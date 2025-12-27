@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+}
+
+#tree-container {
+    width: 300px; /* Adjust based on image aspect ratio */
+    height: auto;
+    -webkit-app-region: drag; /* Make the whole image draggable */
+    cursor: grab;
+    transition: transform 0.1s ease;
+}
+
+#tree-container:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* Prevent image dragging behavior */
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4)); /* Golden glow */
+}
